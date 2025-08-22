@@ -1,85 +1,139 @@
+Student Placement Eligibility Checker (Python)
 
-#Student Placement Eligibility Checker
-A Python-based application to determine student eligibility for campus placement opportunities based on academic criteria and other requirements.
+📌 Project Overview
 
-Features
-Academic Criteria Validation: Checks CGPA, backlog history, and year of study
+The Student Placement Eligibility Checker is a Python-based project that helps determine whether a student is eligible for placement opportunities based on predefined criteria such as academic scores, skills, and other requirements.
 
-Multiple Branch Support: Handles eligibility rules for different academic departments
+This project is designed to simplify the screening process for both students and recruiters by automating eligibility checks with customizable rules.
 
-Customizable Thresholds: Easily configurable eligibility parameters
 
-User-Friendly Interface: Simple command-line interface for quick checks
+---
 
-Detailed Feedback: Provides specific reasons for eligibility/ineligibility
+🚀 Features
 
-Installation
-Clone the repository:
+✅ Check student eligibility based on multiple criteria (e.g., 10th %, 12th %, CGPA, backlogs).
 
-bash
+✅ Simple command-line interface for easy interaction.
+
+✅ Modular and well-structured Python code.
+
+✅ Easy to customize eligibility conditions.
+
+✅ Supports multiple student records.
+
+
+
+---
+
+🛠️ Tech Stack
+
+Language: Python 3.x
+
+Libraries Used:
+
+pandas → Data handling and storage
+
+matplotlib (optional) → For graphs/visualizations
+
+tabulate → For displaying results in a structured table
+
+
+
+
+---
+
+📂 Project Structure
+
+├── placement_checker.py      # Main Python script
+├── requirements.txt          # List of dependencies
+├── data/
+│   └── students.csv          # Sample dataset of students
+├── visuals/
+│   └── eligibility_graph.png # Example graph output
+└── README.md                 # Project documentation
+
+
+---
+
+⚙️ Installation & Setup
+
+1. Clone the repository:
+
 git clone https://github.com/your-username/student-placement-eligibility-checker.git
-Navigate to the project directory:
-
-bash
 cd student-placement-eligibility-checker
-Ensure you have Python 3.6+ installed on your system.
 
-Usage
-Run the main script to check student eligibility:
 
-bash
+2. Create a virtual environment (optional but recommended):
+
+python -m venv venv
+source venv/bin/activate   # On Windows: venv\Scripts\activate
+
+
+3. Install dependencies:
+
+pip install -r requirements.txt
+
+
+
+
+---
+
+▶️ Usage
+
+1. Run the main script:
+
 python placement_checker.py
-Follow the on-screen prompts to enter student details:
 
-Student name
 
-Academic branch
+2. Input student details or load from a CSV file.
 
-Current CGPA
 
-Number of active backlogs
+3. The program will display whether each student is Eligible or Not Eligible for placement.
 
-Year of study
 
-Other relevant information
 
-Configuration
-Eligibility criteria can be customized by modifying the config.py file:
+Example output:
 
-python
-# Minimum CGPA requirement
-MIN_CGPA = 6.0
++-----------+--------+------+---------+
+| Student   | CGPA   | 10th | Status  |
++-----------+--------+------+---------+
+| Alice     | 8.2    | 85%  | Eligible|
+| Bob       | 6.5    | 60%  | Not Eligible |
++-----------+--------+------+---------+
 
-# Maximum allowed backlogs
-MAX_BACKLOGS = 0
 
-# Eligible years of study
-ELIGIBLE_YEARS = [4]  # Typically final year students
-Project Structure
-text
-student-placement-eligibility-checker/
-├── placement_checker.py  # Main application
-├── config.py             # Configuration settings
-├── student.py            # Student class definition
-├── requirements.txt      # Project dependencies
-└── README.md            # Project documentation
-Contributing
-Contributions are welcome! Please feel free to submit a Pull Request.
+---
 
-Fork the project
+📊 Sample Visualization
 
-Create your feature branch (git checkout -b feature/AmazingFeature)
+The project can generate graphs like CGPA vs Eligibility:
 
-Commit your changes (git commit -m 'Add some AmazingFeature')
 
-Push to the branch (git push origin feature/AmazingFeature)
+
+
+---
+
+🔧 Customization
+
+You can modify the eligibility rules in placement_checker.py. For example:
+
+if cgpa >= 7.0 and tenth >= 65 and twelfth >= 65 and backlogs == 0:
+    status = "Eligible"
+else:
+    status = "Not Eligible"
+
+
+---
+
+🤝 Contributing
+
+Contributions are welcome!
+
+Fork the repository
+
+Create a new branch (feature-branch)
+
+Commit your changes
 
 Open a Pull Request
 
-License
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-Acknowledgments
-Inspired by campus placement processes at educational institutions
-
-Built with Python for accessibility and ease of use
